@@ -3,25 +3,31 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+                name="repository"
+                type="ru.haknazarovfarkhod.rxandroid.Repository"/>
+    </data>
+
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context="ru.haknazarovfarkhod.rxandroid.MainActivity">
-
         <TextView
                 android:id="@+id/repository_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"
+                android:layout_width="292dp"
+                android:layout_height="28dp"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.083"
-                tools:text="Modern Android app"/>
+                app:layout_constraintVertical_bias="0.022"
+                android:text="@{repository.repositoryName}"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginRight="8dp"/>
 
         <TextView
                 android:id="@+id/repository_has_issues"
@@ -43,16 +49,17 @@
                 android:id="@+id/repository_owner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="600dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/repository_name"
-                app:layout_constraintVertical_bias="0.0"
-                tools:text="Mladen Rakonjac"/>
+
+                app:layout_constraintHorizontal_bias="0.0"
+                android:text="Farkhod Kh" android:visibility="visible"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/repository_name"
+                app:layout_constraintVertical_bias="0.233"/>
 
         <TextView
                 android:id="@+id/number_of_starts"
@@ -64,12 +71,10 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/repository_owner"
                 app:layout_constraintVertical_bias="0.0"
-                tools:text="0 stars"/>
-
+                android:text="0 stars" android:visibility="visible"/>
     </android.support.constraint.ConstraintLayout>
-
 </layout>

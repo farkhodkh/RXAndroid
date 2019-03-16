@@ -13,6 +13,12 @@ class MainActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.repositoryName.text = "Modern Android Medium Article"
+//        binding.repositoryName.text = "Modern Android Medium Article"
+
+        var repository = Repository("Medium Android Repository Article",
+            "Farkhod Khaknazarov", 1000, true)
+
+        binding.repository = repository
+        binding.executePendingBindings()
     }
 }
